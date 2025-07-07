@@ -165,12 +165,19 @@
 
 // Promise.race([p1 , p2 , p3 , p4]).then((res) => console.log(res)).catch((err) => console.log("Error : " , err));
 
-
 async function fetchProducts() {
     const products = await fetch("https://dummyjson.com/products");
     const data = await products.json()
     console.log(data);
-    //create new array of objects which consists of [title , desc , price]
+
+    const list = document.getElementById("list");
+    
+    data.products.forEach(p => {
+        const li = document.createElement("li");
+        li.innerText = `Title : ${p.title} \n Description :${p.description} \n Price: $${p.price}`;
+        list.appendChild(li);
+    });
+    //HW -> create new array of objects which consists of [title , desc , price]
 }
 
-fetchProducts()
+fetchProducts();
