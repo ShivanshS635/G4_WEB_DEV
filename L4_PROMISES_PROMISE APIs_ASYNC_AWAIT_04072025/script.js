@@ -168,7 +168,7 @@
 async function fetchProducts() {
     const products = await fetch("https://dummyjson.com/products");
     const data = await products.json()
-    console.log(data);
+    //console.log(data);
 
     const list = document.getElementById("list");
     
@@ -181,3 +181,64 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+let p1 = new Promise((resolve , reject) => {
+    setTimeout(() => {
+       resolve("Promise 1 Resolved"); 
+    }, 4000);
+});
+
+// p1.then((res) => console.log(res))
+// .then(() => setTimeout(() => {
+//     console.log("P2")
+// }, 2000))
+// .then(() => setTimeout(() => {
+//     console.log("P3")
+// }, 5000))
+// .then(() => setTimeout(() => {
+//     console.log("P4")
+// }, 1000))
+// .catch((err) => console.log(err));
+
+//output
+// Promise 1 Resolved
+// P4
+// P2
+// P3
+
+//but i want the result in series
+
+// function something(msg , delay){
+//     return new Promise((resolve , reject) => {
+//         setTimeout(() => {
+//             console.log("Promise Resolved : " , msg)
+//             resolve(msg); 
+//         }, delay);
+//     });
+// }
+
+// p1.then((res) => {
+//     console.log(res)
+// })
+// .then(() => {
+//     return something("P2" , 2000);
+// })
+// .then(() => {
+//     return something("P3" , 5000);
+// })
+// .then(() => {
+//     return something("P4" , 1000);
+// })
+
+p1
+.then((res) => console.log(res))
+.then(() => setTimeout(() => {
+    console.log("P2")
+}, 2000))
+.then(() => setTimeout(() => {
+    console.log("P3")
+}, 5000))
+.then(() => setTimeout(() => {
+    console.log("P4")
+}, 1000))
+.catch((err) => console.log(err));
