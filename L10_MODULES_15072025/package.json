@@ -1,0 +1,15 @@
+{
+  "name": "l9_modules_14072025",
+  "version": "1.0.0",
+  "description": "This is js code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
