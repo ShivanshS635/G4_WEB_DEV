@@ -1,0 +1,19 @@
+{
+  "name": "calculator_functionality",
+  "version": "1.0.2",
+  "description": "This Is The Functionality Of Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Calculator",
+    "sub",
+    "add"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@changesets/cli": "^2.29.5"
+  }
+}
